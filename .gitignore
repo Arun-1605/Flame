@@ -1,0 +1,13 @@
+# Secrets — never commit
+Secrets.cs
+Platforms/Android/google-services.json
+connectapp-release.keystore
+
+# Build outputs
+bin/
+obj/
+*.user
+.vs/
+
+# macOS
+.DS_Store

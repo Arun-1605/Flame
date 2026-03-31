@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:views="clr-namespace:ConnectApp.Views"
+       x:Class="ConnectApp.AppShell"
+       Shell.BackgroundColor="{StaticResource PrimaryDark}"
+       Shell.ForegroundColor="{StaticResource TextPrimary}"
+       Shell.TabBarBackgroundColor="{StaticResource TabBarBackground}"
+       Shell.TabBarForegroundColor="{StaticResource TabBarSelected}"
+       Shell.TabBarUnselectedColor="{StaticResource TabBarUnselected}">
+
+    <!-- ── Auth routes (no tab bar) ── -->
+    <ShellContent x:Name="SplashShell"
+                  Route="splash"
+                  Shell.NavBarIsVisible="False"
+                  Shell.TabBarIsVisible="False"
+                  ContentTemplate="{DataTemplate views:SplashPage}"/>
+
+    <ShellContent Route="login"
+                  Shell.NavBarIsVisible="False"
+                  Shell.TabBarIsVisible="False"
+                  ContentTemplate="{DataTemplate views:LoginPage}"/>
+
+    <ShellContent Route="register"
+                  Shell.NavBarIsVisible="False"
+                  Shell.TabBarIsVisible="False"
+                  ContentTemplate="{DataTemplate views:RegisterPage}"/>
+
+    <!-- ── Main tab bar ── -->
+    <TabBar x:Name="MainTabs" Route="main">
+
+        <!-- Discover tab -->
+        <ShellContent Title="Discover"
+                      Route="discover"
+                      Icon="tab_flame.png"
+                      Shell.NavBarIsVisible="False"
+                      ContentTemplate="{DataTemplate views:DiscoverPage}"/>
+
+        <!-- Matches tab -->
+        <ShellContent Title="Matches"
+                      Route="matches"
+                      Icon="tab_heart.png"
+                      ContentTemplate="{DataTemplate views:MatchesPage}"/>
+
+        <!-- Profile tab -->
+        <ShellContent Title="Profile"
+                      Route="profile"
+                      Icon="tab_person.png"
+                      Shell.NavBarIsVisible="False"
+                      ContentTemplate="{DataTemplate views:ProfilePage}"/>
+
+    </TabBar>
+
+</Shell>
